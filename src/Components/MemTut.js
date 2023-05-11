@@ -31,9 +31,14 @@ class MemTut extends React.Component {
     //  const date = 100;
     //  const startTime = 100;
 
+    const prolificID = this.props.state.prolificID;
+    const condition = this.props.state.condition;
     const userID = this.props.state.userID;
     const date = this.props.state.date;
     const startTime = this.props.state.startTime;
+
+    const memCorrectPer = this.props.state.memCorrectPer;
+    const perCorrectPer = this.props.state.perCorrectPer; //if perception task is done, it will be filled, else zero
 
     var statePic = this.props.state.statePic;
     var stateWord = this.props.state.stateWord;
@@ -60,6 +65,8 @@ class MemTut extends React.Component {
     // SET STATES
     this.state = {
       // demo paramters
+      prolificID: prolificID,
+      condition: condition,
       userID: userID,
       date: date,
       startTime: startTime,

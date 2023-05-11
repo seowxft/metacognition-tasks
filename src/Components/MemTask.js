@@ -29,9 +29,13 @@ class MemTask extends React.Component {
     //  const startTime = 100;
     //
     const userID = this.props.state.userID;
+    const prolificID = this.props.state.prolificID;
+    const condition = this.props.state.condition;
     const date = this.props.state.date;
     const startTime = this.props.state.startTime;
     const stimNum = this.props.state.stimNum;
+    const memCorrectPer = this.props.state.memCorrectPer;
+    const perCorrectPer = this.props.state.perCorrectPer;
 
     var statePic = this.props.state.statePic;
     var stateWord = this.props.state.stateWord;
@@ -117,6 +121,9 @@ class MemTask extends React.Component {
       taskScreen: false,
       taskSection: null,
       debug: false,
+
+      memCorrectPer: memCorrectPer,
+      perCorrectPer: perCorrectPer,
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -1122,12 +1129,29 @@ class MemTask extends React.Component {
   redirectToNextTask() {
     document.removeEventListener("keyup", this._handleInstructKey);
     document.removeEventListener("keyup", this._handleBeginKey);
-    this.props.navigate("/Bonus?PROLIFIC_PID=" + this.state.userID, {
+
+    var condition = this.state.condition;
+    var perCorrectPer = this.state.perCorrectPer;
+    var memCorrectPer = this.state.correctPer;
+
+    var condUrl;
+    if (condition === 1) {
+      //Sent to insight to finish
+      condUrl = "/Bonus?PROLIFIC_PID=";
+    } else {
+      //Sent to perception task for part 2
+      condUrl = "/MemPreTut?PROLIFIC_PID=";
+    }
+
+    this.props.navigate(condUrl + this.state.prolificID, {
       state: {
+        prolificID: this.state.prolificID,
         userID: this.state.userID,
+        condition: this.state.condition,
         date: this.state.date,
         startTime: this.state.startTime,
-        correctPer: this.state.correctPer,
+        perCorrectPer: perCorrectPer,
+        memCorrectPer: memCorrectPer,
       },
     });
   }

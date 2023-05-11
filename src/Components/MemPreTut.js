@@ -48,8 +48,8 @@ class MemPreTut extends React.Component {
     const date = this.props.state.date;
     const startTime = this.props.state.startTime;
 
-    const memCorrectPer = this.state.memCorrectPer;
-    const perCorrectPer = this.state.perCorrectPer; //if perception task is done, it will be filled, else zero
+    const memCorrectPer = this.props.state.memCorrectPer;
+    const perCorrectPer = this.props.state.perCorrectPer; //if perception task is done, it will be filled, else zero
 
     ////////////////
     var stateWord = [
@@ -986,7 +986,7 @@ class MemPreTut extends React.Component {
   }
 
   renderPreTutorSave() {
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
 
     //  var stimPickShown = this.state.stimPickShown.substring(0, 50);
     //  var statePicArray = this.state.statePicArray.substring(0, 50);
@@ -996,6 +996,8 @@ class MemPreTut extends React.Component {
     var statePicArray = null;
 
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition: this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1029,7 +1031,7 @@ class MemPreTut extends React.Component {
     console.log(saveString);
 
     try {
-      fetch(`${DATABASE_URL}/mem_pre_tutorial_data/` + userID, {
+      fetch(`${DATABASE_URL}/mem_pre_tutorial_data/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1052,13 +1054,17 @@ class MemPreTut extends React.Component {
   redirectToNextTask() {
     document.removeEventListener("keyup", this._handleInstructKey);
     document.removeEventListener("keyup", this._handleBeginKey);
-    this.props.navigate("/MetaMemTut?PROLIFIC_PID=" + this.state.userID, {
+    this.props.navigate("/MetaMemTut?PROLIFIC_PID=" + this.state.prolificID, {
       state: {
+        prolificID: this.state.prolificID,
+        condition: this.state.condition,
         userID: this.state.userID,
         date: this.state.date,
         startTime: this.state.startTime,
         statePic: this.state.statePic,
         stateWord: this.state.stateWord,
+        perCorrectPer: this.state.perCorrectPer,
+        memCorrectPer: this.state.memCorrectPer,
       },
     });
 

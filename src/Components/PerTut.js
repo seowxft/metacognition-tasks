@@ -42,8 +42,8 @@ class PerTut extends React.Component {
     const date = this.props.state.date;
     const startTime = this.props.state.startTime;
 
-    const memCorrectPer = this.state.memCorrectPer;
-    const perCorrectPer = this.state.perCorrectPer;
+    const memCorrectPer = this.props.state.memCorrectPer;
+    const perCorrectPer = this.props.state.perCorrectPer; //if perception task is done, it will be filled, else zero
 
     var trialNumTotal = 16; //26
 
