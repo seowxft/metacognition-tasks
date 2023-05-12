@@ -136,9 +136,11 @@ class Bonus extends React.Component {
   }
 
   handleSubmit(event) {
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
 
     let feedback = {
+      prolificID: this.state.prolificID,
+      condition: this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -146,12 +148,14 @@ class Bonus extends React.Component {
       sectionTime: this.state.sectionTime,
       ratingTime: null,
       ratingValue: null,
-      totalBonus: null,
+      memBonus: this.state.memBonus,
+      perBonus: this.state.perBonus,
+      totalBonus: this.state.totalBonus,
       feedback: this.state.feedback,
     };
 
     try {
-      fetch(`${DATABASE_URL}/feedback/` + userID, {
+      fetch(`${DATABASE_URL}/feedback/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",

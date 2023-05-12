@@ -134,6 +134,9 @@ class MemTut extends React.Component {
       taskScreen: false,
       taskSection: null,
       debug: false,
+
+      memCorrectPer: memCorrectPer,
+      perCorrectPer:perCorrectPer,
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -1450,13 +1453,15 @@ class MemTut extends React.Component {
   }
 
   renderTutorSave() {
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
 
     //  var stimPickShown = this.state.stimPickShown.substring(0, 50);
     var stimShown = null;
     var stimPick = null;
 
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition:this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1497,7 +1502,7 @@ class MemTut extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/mem_tutorial_data/` + userID, {
+      fetch(`${DATABASE_URL}/mem_tutorial_data/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1518,9 +1523,11 @@ class MemTut extends React.Component {
   }
 
   renderQuizSave() {
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
 
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition: this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1540,7 +1547,7 @@ class MemTut extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/mem_quiz_test/` + userID, {
+      fetch(`${DATABASE_URL}/mem_quiz_test/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1563,14 +1570,18 @@ class MemTut extends React.Component {
   redirectToNextTask() {
     document.removeEventListener("keyup", this._handleInstructKey);
     document.removeEventListener("keyup", this._handleBeginKey);
-    this.props.navigate("/MetaMemTask?PROLIFIC_PID=" + this.state.userID, {
+    this.props.navigate("/MemTask?PROLIFIC_PID=" + this.state.prolificID, {
       state: {
+        prolificID: this.state.prolificID,
+        condition: this.state.condition,
         userID: this.state.userID,
         date: this.state.date,
         startTime: this.state.startTime,
         statePic: this.state.statePic,
         stateWord: this.state.stateWord,
         stimNum: this.state.stimNum,
+        memCorrectPer: this.state.memCorrectPer,
+        perCorrectPer:this.state.perCorrectPer
       },
     });
 

@@ -1054,7 +1054,7 @@ class MemPreTut extends React.Component {
   redirectToNextTask() {
     document.removeEventListener("keyup", this._handleInstructKey);
     document.removeEventListener("keyup", this._handleBeginKey);
-    this.props.navigate("/MetaMemTut?PROLIFIC_PID=" + this.state.prolificID, {
+    this.props.navigate("/MemTut?PROLIFIC_PID=" + this.state.prolificID, {
       state: {
         prolificID: this.state.prolificID,
         condition: this.state.condition,
