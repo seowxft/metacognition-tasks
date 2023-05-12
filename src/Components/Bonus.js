@@ -37,7 +37,8 @@ class Bonus extends React.Component {
 
     var memBonus = Math.round((2 * memCorrectPer + Number.EPSILON) * 100) / 100; // 2 dec pl
     var perBonus = Math.round((2 * perCorrectPer + Number.EPSILON) * 100) / 100; // 2 dec pl
-    var totalBonus = Math.round(memBonus + perBonus)/2; // 2 dec pl
+    var totalBonus =  Math.round( (memBonus + perBonus) * 100 + Number.EPSILON ) / 100
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +88,10 @@ class Bonus extends React.Component {
 
   //for the feedback box
   handleChange(event) {
-    this.setState({ feedback: event.target.value });
+    this.setState({
+      feedback: event.target.value,
+      section: "feedback",
+    });
   }
 
   // This handles instruction screen within the component USING KEYBOARD
@@ -222,10 +226,7 @@ class Bonus extends React.Component {
         section: "insight2",
       });
     } else {
-      this.setState({
-        instructNum: this.state.instructNum + 1,
-        section: "feedback",
-      });
+     
     }
   }
 

@@ -569,6 +569,7 @@ class PerTut extends React.Component {
         <span>
           {text}
           {taskCond}
+          <br /><br />
           We need you to replace the battery cards fueling the spaceship.
           However, the new battery cards have different charge levels - we need
           your assistance in selecting the ones with{" "}
