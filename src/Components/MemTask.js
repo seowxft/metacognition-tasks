@@ -48,7 +48,7 @@ class MemTask extends React.Component {
       return val !== undefined;
     });
 
-    var trialNumTotal = 150; //150
+    var trialNumTotal = 9; //150
     var blockNumTotal = 3;
     var trialNumPerBlock = Math.round(trialNumTotal / blockNumTotal);
 
