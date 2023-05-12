@@ -1084,7 +1084,7 @@ class MemTask extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/mem_pre_post_conf/` + userID, {
+      fetch(`${DATABASE_URL}/pre_post_conf/` + userID, {
         method: "POST",
         headers: {
           Accept: "application/json",

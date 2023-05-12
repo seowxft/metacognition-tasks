@@ -1009,7 +1009,7 @@ class PerTask extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/prepost_conf/` + prolificID, {
+      fetch(`${DATABASE_URL}/pre_post_conf/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
