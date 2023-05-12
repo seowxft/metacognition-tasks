@@ -1076,10 +1076,12 @@ class MemTask extends React.Component {
   renderQuizSave() {
     document.removeEventListener("keyup", this._handleGlobalConfKey);
     var prolificID = this.state.prolificID;
+    var task = "memory";
 
     let saveString = {
       prolificID: this.state.prolificID,
       condition: this.state.condition,
+      task: task,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,

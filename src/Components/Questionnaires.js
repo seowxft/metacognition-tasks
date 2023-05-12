@@ -125,7 +125,7 @@ class Questionnaires extends React.Component {
 
     var qnEnd = Math.round(performance.now());
     var prolificID = this.state.prolificID;
-    survey.setValue("userID", prolificID);
+    survey.setValue("prolificID", prolificID);
     survey.setValue("condition", this.state.condition);
     survey.setValue("userID", this.state.userID);
     survey.setValue("date", this.state.date);

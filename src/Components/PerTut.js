@@ -1303,9 +1303,11 @@ class PerTut extends React.Component {
   }
 
   renderTutorSave() {
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
 
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition:this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1343,7 +1345,7 @@ class PerTut extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/per_tutorial_data/` + userID, {
+      fetch(`${DATABASE_URL}/per_tutorial_data/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1387,7 +1389,7 @@ class PerTut extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/quiz_test/` + prolificID, {
+      fetch(`${DATABASE_URL}/per_quiz_test/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",

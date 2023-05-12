@@ -982,15 +982,7 @@ class PerTask extends React.Component {
   renderQuizSave() {
     document.removeEventListener("keyup", this._handleGlobalConfKey);
     var prolificID = this.state.prolificID;
-    var condition = this.state.condition;
-    var task;
-    if (condition === 1) {
-      task = "perception";
-    } else if (condition === 2) {
-      task = "memory";
-    } else {
-      task = "error";
-    }
+    var task = "perception";
 
     let saveString = {
       prolificID: this.state.prolificID,
