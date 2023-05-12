@@ -568,7 +568,6 @@ class PerTut extends React.Component {
       <div>
         <span>
           {text}
-          Welcome to spaceship, engineer!
           {taskCond}
           We need you to replace the battery cards fueling the spaceship.
           However, the new battery cards have different charge levels - we need
