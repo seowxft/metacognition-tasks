@@ -148,9 +148,9 @@ class Bonus extends React.Component {
       sectionTime: this.state.sectionTime,
       ratingTime: null,
       ratingValue: null,
-      memBonus: this.state.memBonus,
-      perBonus: this.state.perBonus,
-      totalBonus: this.state.totalBonus,
+      memBonus: null,
+      perBonus: null,
+      totalBonus:null,
       feedback: this.state.feedback,
     };
 
