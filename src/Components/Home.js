@@ -2,7 +2,7 @@ import screenfull from "screenfull";
 import React from "react";
 import withRouter from "./withRouter.js";
 import style from "./style/perTaskStyle.module.css";
-import queryString from "query-string";
+// import queryString from "query-string";
 
 class Home extends React.Component {
   constructor(props) {
