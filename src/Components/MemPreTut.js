@@ -468,6 +468,14 @@ class MemPreTut extends React.Component {
     var taskCond;
 
     if (this.state.condition === 1) {
+      //perception task started first
+      taskCond = (
+        <span>
+          After we powered up the spaceship, we unforunately found that some
+          things have been displaced!
+        </span>
+      );
+    } else {
       taskCond = (
         <span>
           Welcome to spaceship!
@@ -476,13 +484,7 @@ class MemPreTut extends React.Component {
           here to help.
         </span>
       );
-    } else {
-      taskCond = (
-        <span>
-          After we powered up the spaceship, we unforunately found that some
-          things have been displaced!
-        </span>
-      );
+    
     }
 
     let instruct_text1 = (
@@ -1054,7 +1056,7 @@ class MemPreTut extends React.Component {
   redirectToNextTask() {
     document.removeEventListener("keyup", this._handleInstructKey);
     document.removeEventListener("keyup", this._handleBeginKey);
-    this.props.navigate("/MetaMemTut?PROLIFIC_PID=" + this.state.prolificID, {
+    this.props.navigate("/MemTut?PROLIFIC_PID=" + this.state.prolificID, {
       state: {
         prolificID: this.state.prolificID,
         condition: this.state.condition,

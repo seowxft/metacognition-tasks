@@ -48,7 +48,7 @@ class MemTask extends React.Component {
       return val !== undefined;
     });
 
-    var trialNumTotal = 150; //150
+    var trialNumTotal = 9; //150
     var blockNumTotal = 3;
     var trialNumPerBlock = Math.round(trialNumTotal / blockNumTotal);
 
@@ -62,6 +62,8 @@ class MemTask extends React.Component {
     //////////////////////////////////////////////////////////////////////////////////////////////
     // SET STATES
     this.state = {
+      prolificID: prolificID,
+      condition:condition,
       userID: userID,
       date: date,
       startTime: startTime,
@@ -967,11 +969,14 @@ class MemTask extends React.Component {
 
     console.log("trialNumInBlock Save: " + this.state.trialNumInBlock);
 
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
     //  var stimPickShown = this.state.stimPickShown.substring(0, 50);
     var stimShown = null;
     var stimPick = null;
+
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition: this.state.condition,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1017,7 +1022,7 @@ class MemTask extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/mem_task_data/` + userID, {
+      fetch(`${DATABASE_URL}/mem_task_data/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1070,9 +1075,13 @@ class MemTask extends React.Component {
 
   renderQuizSave() {
     document.removeEventListener("keyup", this._handleGlobalConfKey);
-    var userID = this.state.userID;
+    var prolificID = this.state.prolificID;
+    var task = "memory";
 
     let saveString = {
+      prolificID: this.state.prolificID,
+      condition: this.state.condition,
+      task: task,
       userID: this.state.userID,
       date: this.state.date,
       startTime: this.state.startTime,
@@ -1084,7 +1093,7 @@ class MemTask extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/mem_pre_post_conf/` + userID, {
+      fetch(`${DATABASE_URL}/pre_post_conf/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -1140,7 +1149,7 @@ class MemTask extends React.Component {
       condUrl = "/Bonus?PROLIFIC_PID=";
     } else {
       //Sent to perception task for part 2
-      condUrl = "/MemPreTut?PROLIFIC_PID=";
+      condUrl = "/PerTut?PROLIFIC_PID=";
     }
 
     this.props.navigate(condUrl + this.state.prolificID, {

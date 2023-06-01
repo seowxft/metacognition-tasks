@@ -42,7 +42,7 @@ class PerTask extends React.Component {
     const memCorrectPer = this.props.state.memCorrectPer;
     const perCorrectPer = this.props.state.perCorrectPer; //if perception task is done, it will be filled, else zero
 
-    var trialNumTotal = 150; //150
+    var trialNumTotal = 9; //150
     var blockNumTotal = 3;
     var trialNumPerBlock = Math.round(trialNumTotal / blockNumTotal);
 
@@ -982,15 +982,7 @@ class PerTask extends React.Component {
   renderQuizSave() {
     document.removeEventListener("keyup", this._handleGlobalConfKey);
     var prolificID = this.state.prolificID;
-    var condition = this.state.condition;
-    var task;
-    if (condition === 1) {
-      task = "perception";
-    } else if (condition === 2) {
-      task = "memory";
-    } else {
-      task = "error";
-    }
+    var task = "perception";
 
     let saveString = {
       prolificID: this.state.prolificID,
@@ -1009,7 +1001,7 @@ class PerTask extends React.Component {
     };
 
     try {
-      fetch(`${DATABASE_URL}/prepost_conf/` + prolificID, {
+      fetch(`${DATABASE_URL}/pre_post_conf/` + prolificID, {
         method: "POST",
         headers: {
           Accept: "application/json",
