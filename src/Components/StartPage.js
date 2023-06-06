@@ -10,6 +10,8 @@ class StartPage extends React.Component {
   constructor(props) {
     super(props);
 
+    const prolificID = this.props.state.prolificID;
+
     // Get data and time
     var dateTime = new Date().toLocaleString();
 
@@ -32,8 +34,6 @@ class StartPage extends React.Component {
       condition = 2;
       console.log("Start with memory task.");
     }
-
-    const prolificID = this.props.state.prolificID;
 
     // Set state
     this.state = {
