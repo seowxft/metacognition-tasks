@@ -222,8 +222,8 @@ class EndPage extends React.Component {
           <br />
           <br />
           If the page fails to be directed to Prolific, please use the
-          compeletion code <strong>XXXXXXXXX</strong> and send a message to us
-          on Proflic.
+          compeletion code <strong>CSY1MGWE</strong> and send a message to us on
+          Proflic.
         </span>
       </div>
     );
@@ -254,7 +254,7 @@ class EndPage extends React.Component {
     alert("You will now be redirected to Prolific's validation page.");
     document.removeEventListener("keyup", this._handleInstructKey);
     window.location =
-      "https://app.prolific.co/submissions/complete?cc=C1FUHKFG"; //this will the prolific validation code
+      "https://app.prolific.co/submissions/complete?cc=CSY1MGWE"; //this will the prolific validation code
   }
 
   ///////////////////////////////////////////////////////////////
