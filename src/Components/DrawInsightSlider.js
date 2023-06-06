@@ -45,7 +45,7 @@ export function InsightSlider1({ callBackValue, initialValue }) {
   const [value1, setValue1] = React.useState(initialValue);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue1(newValue);
     console.log(newValue);
     callBackValue(newValue);
   };
@@ -107,7 +107,7 @@ export function InsightSlider2({ callBackValue, initialValue }) {
   const [value2, setValue2] = React.useState(initialValue);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue2(newValue);
     console.log(newValue);
     callBackValue(newValue);
   };
@@ -161,7 +161,7 @@ export function InsightSlider3({ callBackValue, initialValue }) {
   const [value3, setValue3] = React.useState(initialValue);
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue3(newValue);
     console.log(newValue);
     callBackValue(newValue);
   };
