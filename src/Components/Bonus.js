@@ -263,8 +263,9 @@ class Bonus extends React.Component {
         Well done on completing both tasks!
         <br />
         <br />
-        How much did you feel that your confidence changed from completing the
-        first task [{FirstT}] to finishing the second task [{SecondT}]?
+        How much did you feel that your confidence <strong>changed</strong> from
+        completing the first task [{FirstT}] to finishing the second task [
+        {SecondT}]?
         <br />
         <br />
         <br />
@@ -290,7 +291,8 @@ class Bonus extends React.Component {
     let instruct_text2 = (
       <div>
         How much did you feel that your confidence in the first task [{FirstT}]
-        influenced your confidence on the second task [{SecondT}]?
+        <strong>influenced</strong> your confidence on the second task [
+        {SecondT}]?
         <br />
         <br />
         <br />
