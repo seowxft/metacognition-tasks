@@ -37,8 +37,12 @@ class RatingDomain extends React.Component {
       //section paramters
       sectionTime: sectionTime,
       section: "domain",
-      ratingInitial: 5,
-      ratingValue: null,
+      quizState: "domain",
+
+      confTimeInitial: null,
+      confTime: null,
+      confInitial: 5,
+      confLevel: null,
 
       // screen parameters
       instructScreen: true,
@@ -69,14 +73,14 @@ class RatingDomain extends React.Component {
   // This handles instruction screen within the component USING KEYBOARD
   handleInstruct(keyPressed, timePressed) {
     var curInstructNum = this.state.instructNum;
-    var ratingValue = this.state.ratingValue;
+    var confLevel = this.state.confLevel;
     var whichButton = keyPressed;
 
     if (whichButton === 3 && curInstructNum < 3 && ratingValue !== null) {
-      var ratingTime = timePressed - this.state.sectionTime;
+      var confTime = timePressed - this.state.sectionTime;
 
       this.setState({
-        ratingTime: ratingTime,
+        confTime: confTime,
       });
 
       setTimeout(
@@ -105,7 +109,7 @@ class RatingDomain extends React.Component {
   };
 
   handleCallbackConf(callBackValue) {
-    this.setState({ ratingValue: callBackValue });
+    this.setState({ confLevel: callBackValue });
   }
 
   instructText(instructNum) {
@@ -144,7 +148,7 @@ class RatingDomain extends React.Component {
         <center>
           <ConfSliderDomain.ConfSliderDomain
             callBackValue={this.handleCallbackConf.bind(this)}
-            initialValue={this.state.ratingInitial}
+            initialValue={this.state.confInitial}
           />
           <br />
           <br />
@@ -170,7 +174,7 @@ class RatingDomain extends React.Component {
         <center>
           <ConfSliderDomain.ConfSliderDomain
             callBackValue={this.handleCallbackConf.bind(this)}
-            initialValue={this.state.ratingInitial}
+            initialValue={this.state.confInitial}
           />
           <br />
           <br />
@@ -208,8 +212,8 @@ class RatingDomain extends React.Component {
       startTime: this.state.startTime,
       section: this.state.section,
       sectionTime: this.state.sectionTime,
-      quizState: "domain",
-      confTimeInitial: this.state.confTimeInitial,
+      quizState: this.state.quizState,
+      confTimeInitial: null,
       confTime: this.state.confTime,
       confInitial: this.state.confInitial,
       confLevel: this.state.confLevel,
@@ -235,8 +239,8 @@ class RatingDomain extends React.Component {
       //move to page 2
       this.setState({
         instructNum: this.state.instructNum + 1,
-        ratingInitial: 5,
-        ratingValue: null,
+        confInitial: 5,
+        confLevel: null,
       });
     } else if (instructNum === 2) {
       // move to real task!
