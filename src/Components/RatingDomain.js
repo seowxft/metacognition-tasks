@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style/perTaskStyle.module.css";
 import withRouter from "./withRouter.js";
+import * as utils from "./utils.js";
 import * as ConfSliderDomain from "./DrawConfSliderDomain.js";
 
 import { DATABASE_URL } from "./config";
@@ -31,7 +32,6 @@ class RatingDomain extends React.Component {
       userID: userID,
       date: date,
       startTime: startTime,
-      astrodude: astrodude,
       domain: domain,
 
       //section paramters
