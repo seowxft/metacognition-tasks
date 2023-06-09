@@ -76,7 +76,7 @@ class RatingDomain extends React.Component {
     var confLevel = this.state.confLevel;
     var whichButton = keyPressed;
 
-    if (whichButton === 3 && curInstructNum < 3 && ratingValue !== null) {
+    if (whichButton === 3 && curInstructNum < 3 && confLevel !== null) {
       var confTime = timePressed - this.state.sectionTime;
 
       this.setState({
