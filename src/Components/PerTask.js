@@ -998,8 +998,8 @@ class PerTask extends React.Component {
       section: this.state.section,
       sectionTime: this.state.sectionTime,
       quizState: this.state.quizState,
-      confTimeInitial: this.state.confTimeInitial,
-      confTime: this.state.confTime,
+      //  confTimeInitial: this.state.confTimeInitial,
+      //  confTime: this.state.confTime,
       confInitial: this.state.confInitial,
       confLevel: this.state.confLevel,
     };

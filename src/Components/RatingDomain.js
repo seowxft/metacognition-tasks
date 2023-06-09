@@ -198,10 +198,12 @@ class RatingDomain extends React.Component {
   }
 
   renderRatingSave() {
-    document.removeEventListener("keyup", this._handleGlobalConfKey);
     var prolificID = this.state.prolificID;
-
     var task = this.state.domain[this.state.instructNum - 1];
+
+    console.log("this.state.instructNum: " + this.state.instructNum);
+    console.log("this.state.domain: " + this.state.domain);
+    console.log("task:" + task);
 
     let saveString = {
       prolificID: this.state.prolificID,
@@ -213,8 +215,7 @@ class RatingDomain extends React.Component {
       section: this.state.section,
       sectionTime: this.state.sectionTime,
       quizState: this.state.quizState,
-      confTimeInitial: null,
-      confTime: this.state.confTime,
+      //  confTime: this.state.confTime,
       confInitial: this.state.confInitial,
       confLevel: this.state.confLevel,
     };
@@ -265,6 +266,7 @@ class RatingDomain extends React.Component {
   }
 
   redirectToTarget() {
+    document.removeEventListener("keyup", this._handleInstructKey);
     var condition = this.state.condition;
     var condUrl;
 
