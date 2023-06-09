@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./Components/Home";
 import StartPage from "./Components/StartPage";
+import Wellcome from "./Components/RatingDomain";
 import PerTut from "./Components/PerTut";
 import PerTask from "./Components/PerTask";
 import MemPreTut from "./Components/MemPreTut";
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="StartPage" element={<StartPage />} />
+      <Route path="Wellcome" element={<Wellcome />} />
       <Route path="PerTut" element={<PerTut />} />
       <Route path="PerTask" element={<PerTask />} />
       <Route path="MemPreTut" element={<MemPreTut />} />

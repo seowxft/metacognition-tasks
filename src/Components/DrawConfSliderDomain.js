@@ -23,32 +23,24 @@ const marks = [
     label: "0",
   },
   {
-    value: 25,
-    label: "25",
+    value: 2,
+    label: "2",
   },
   {
-    value: 50,
-    label: "50",
+    value: 5,
+    label: "5",
   },
   {
-    value: 75,
-    label: "75",
+    value: 7,
+    label: "7",
   },
   {
-    value: 100,
-    label: "100",
-  },
-  {
-    value: 125,
-    label: "125",
-  },
-  {
-    value: 150,
-    label: "100",
+    value: 10,
+    label: "10",
   },
 ];
 
-export function ConfSliderGlobal({ callBackValue, initialValue }) {
+export function ConfSliderDomain({ callBackValue, initialValue }) {
   const [value, setValue] = React.useState(initialValue);
 
   const handleChange = (event, newValue) => {
@@ -67,7 +59,7 @@ export function ConfSliderGlobal({ callBackValue, initialValue }) {
             step={1}
             marks={marks}
             min={0}
-            max={150}
+            max={10}
             track={false}
             valueLabelDisplay="on"
             value={value}
@@ -75,9 +67,9 @@ export function ConfSliderGlobal({ callBackValue, initialValue }) {
           />
         </ThemeProvider>
       </Box>
-      <span className={style.confTextLeft}>All wrong</span>
-      <span className={style.confTextMiddle}>Chance level</span>
-      <span className={style.confTextRight}>All correct</span>
+      <span className={style.confTextLeft}>Worse than everyone</span>
+      <span className={style.confTextMiddle}>Average</span>
+      <span className={style.confTextRight}>Better than everyone</span>
     </Box>
   );
 }
