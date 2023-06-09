@@ -201,7 +201,7 @@ class RatingDomain extends React.Component {
     document.removeEventListener("keyup", this._handleGlobalConfKey);
     var prolificID = this.state.prolificID;
 
-    var task = this.state.domain[this.state.instructText - 1];
+    var task = this.state.domain[this.state.instructNum - 1];
 
     let saveString = {
       prolificID: this.state.prolificID,
@@ -231,6 +231,13 @@ class RatingDomain extends React.Component {
     } catch (e) {
       console.log("Cant post?");
     }
+
+    setTimeout(
+      function () {
+        this.nextPg();
+      }.bind(this),
+      0
+    );
   }
 
   nextPg() {
