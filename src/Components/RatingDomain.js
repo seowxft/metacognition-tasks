@@ -63,8 +63,7 @@ class RatingDomain extends React.Component {
     //////////////////////////////////////////////////////////////////////////////////////////////
 
     this.handleInstruct = this.handleInstruct.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.instructText = this.instructText.bind(this);
   }
 
   // This handles instruction screen within the component USING KEYBOARD
