@@ -27,7 +27,7 @@ class StartPage extends React.Component {
     // odd numbers will start with the memory task
     var userID = Math.floor(100000 + Math.random() * 900000);
     var condition;
-    if (userID % 2 == 0) {
+    if (userID % 2 === 0) {
       condition = 1;
       console.log("Start with perception task.");
     } else {

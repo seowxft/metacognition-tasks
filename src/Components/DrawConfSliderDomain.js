@@ -22,18 +22,12 @@ const marks = [
     value: 0,
     label: "0",
   },
-  {
-    value: 2,
-    label: "2",
-  },
+
   {
     value: 5,
     label: "5",
   },
-  {
-    value: 7,
-    label: "7",
-  },
+
   {
     value: 10,
     label: "10",

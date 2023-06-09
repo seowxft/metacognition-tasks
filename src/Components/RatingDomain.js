@@ -122,7 +122,7 @@ class RatingDomain extends React.Component {
       explain = (
         <span>
           For example, in estimating whether there are more red or blue marbles
-          are in a jar.
+          in a jar.
         </span>
       );
     }
@@ -139,6 +139,8 @@ class RatingDomain extends React.Component {
         {explain}
         <br />
         <br />
+        <br />
+        <br />
         <center>
           <ConfSliderDomain.ConfSliderDomain
             callBackValue={this.handleCallbackConf.bind(this)}
@@ -147,10 +149,6 @@ class RatingDomain extends React.Component {
           <br />
           <br />
         </center>
-        <br />
-        <br />
-        <br />
-        <br />
         <center>
           Press the [SPACEBAR] to continue.
           <br /> <br />
@@ -163,6 +161,10 @@ class RatingDomain extends React.Component {
       <div>
         2. How you do generally rate your {this.state.domain[1]} ability?{" "}
         {explain}
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <center>
