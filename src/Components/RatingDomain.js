@@ -118,15 +118,13 @@ class RatingDomain extends React.Component {
       //if the curren domain is memory
       explain = (
         <span>
-          For example, in remembering and recognising some shapes or pictures
-          you have seen before.
+          For example, in remembering events that you experienced a long time ago.
         </span>
       );
     } else if (this.state.domain[instructNum - 1] === "perception") {
       explain = (
         <span>
-          For example, in estimating whether there are more red or blue marbles
-          in a jar.
+          For example, how good you are at spotting hidden things, like birds in a forest.
         </span>
       );
     }
