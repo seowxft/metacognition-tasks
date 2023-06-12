@@ -605,7 +605,7 @@ class MemTask extends React.Component {
         <center>
           After going through all the {this.state.trialNumTotal} sets of
           animals, how many times do you think you selected the animal seen in
-          the set corretly?
+          the sets correctly?
         </center>
         <br />
         <br />
