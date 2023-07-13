@@ -29,14 +29,15 @@ class StartPage extends React.Component {
 
     var condition;
     if (userID % 2 === 0) {
-      userID =userID+1;
-      condition = 2;
-      console.log("Start with memory task.");
-    //  condition = 1;
-    //  console.log("Start with perception task.");
+     condition = 1;
+     console.log("Start with perception task.");
     } else {
-      condition = 2;
-      console.log("Start with memory task.");
+     // condition = 2;
+     // console.log("Start with memory task.");
+
+       userID =userID+1;
+      condition = 1;
+      console.log("Start with perception task.");
     }
 
     // Set state
